@@ -20,7 +20,7 @@ Learner progress, simulation scores, and commitments-to-practice persist in `loc
 
 ## What's implemented
 
-Per the design doc's "start narrow" recommendation, the pilot slice authored **Module 1** (conceptual foundation, establishes the Meridian setting) and **Module 5** (most protocolized, most measurable). **Module 2** (The Handoff — information asymmetry and signaling) and **Module 3** (Repeat Customers — reputation, trust, and the shadow of the future) are now authored as well. The remaining four modules are present as navigable overviews.
+All eight modules are fully authored: vignette, Socratic coach flow, branching MCQ case, scored one-on-one simulation, Switch Chairs replay, multidisciplinary meeting, and advocacy-inquiry debrief for every round.
 
 Every authored module follows the six-step rhythm:
 
@@ -36,10 +36,14 @@ Every authored module follows the six-step rhythm:
 
 Behavioral scoring anchors implemented in v1:
 
-- **Module 1:** acknowledgment-before-advocacy moves; surfacing system dynamics without individual blame.
-- **Module 2:** screen design and costly signaling; check-backs that convert disclosures into plans; pressure without hostility.
-- **Module 3:** specific acknowledgment and costly apology; forward commitments with enforcement; rewarding the first mover who speaks up.
-- **Module 5:** closed-loop communication completion rate; graded assertiveness (concern → CUS → two-challenge rule).
+- **Module 1:** acknowledgment-before-advocacy; surfacing system dynamics without individual blame.
+- **Module 2:** screen design and costly signaling; check-backs that convert disclosures into plans.
+- **Module 3:** specific acknowledgment and costly apology; forward commitments with enforcement.
+- **Module 4:** interest discovery, value creation, and mandate discipline at the negotiating table.
+- **Module 5:** closed-loop completion rate; graded assertiveness (concern → CUS → two-challenge rule).
+- **Module 6:** honesty without armor, empathy markers, and process transparency under fire.
+- **Module 7:** surfacing operative objections, design access for skeptics, tailoring without forking.
+- **Module 8:** mechanism diagnosis, financial translation, and the pre-mortem discipline.
 
 ## Repository layout
 
@@ -51,10 +55,7 @@ js/steps.js           Step renderers: vignette, coach, MCQ, dialogue engine, deb
 js/store.js           Progress + scores persistence (localStorage)
 data/modules.js       All 8 modules — metadata, concepts, anchors, step content
 data/personas.js      The persistent Meridian persona roster
-data/module1.js       Module 1 authored content (coach, MCQs, simulations)
-data/module2.js       Module 2 authored content (coach, MCQs, simulations)
-data/module3.js       Module 3 authored content (coach, MCQs, simulations)
-data/module5.js       Module 5 authored content (coach, MCQs, simulations)
+data/module[1-8].js   Authored module content (coach, MCQs, simulations)
 docs/course-design.md The full program design document
 ```
 
@@ -64,7 +65,6 @@ Deep navy and crisp white with soft brass accents; serif display (Playfair Displ
 
 ## Roadmap
 
-- Author Modules 4 and 6–8 (coach flows, MCQ cases, simulations)
-- Live AI personas: swap the scripted dialogue provider for a Claude-backed provider (the dialogue engine is provider-agnostic by design)
+- Live AI personas: swap the scripted dialogue provider for a voice/LLM-backed provider — see docs/elevenlabs-agents.md for the full agent prompt set (the dialogue engine is provider-agnostic by design)
 - Batch rubric scoring + mastery dashboard over the competency map (concept × TeamSTEPPS tool × ethical framework)
 - Spaced retrieval: resurface missed MCQ concepts as "curbside consult" questions in later modules

@@ -1,6 +1,4 @@
-/* The eight rounds of The Meridian Course.
-   Modules 1 and 5 are the authored pilot slice (status: "ready"); the rest
-   carry full design metadata and render as previews until authored. */
+/* The eight rounds of The Meridian Course — all fully authored. */
 
 export const STEP_DEFS = [
   { id: "video",    no: "1",  title: "Topic Video",                duration: "8–12 min" },
@@ -200,7 +198,7 @@ export const modules = [
   },
   {
     id: 8,
-    status: "preview",
+    status: "ready",
     title: "The System Redesign",
     tagline: "Mechanism Design and Leading at Scale — Capstone",
     unit: "System strategy retreat, Meridian Health",

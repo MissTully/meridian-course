@@ -10,11 +10,12 @@ import { module4Content } from "../data/module4.js";
 import { module5Content } from "../data/module5.js";
 import { module6Content } from "../data/module6.js";
 import { module7Content } from "../data/module7.js";
+import { module8Content } from "../data/module8.js";
 import { STEP_DEFS } from "../data/modules.js";
 import { store } from "./store.js";
 import { emblemSVG, horizonBand, artwork, applyArt } from "./art.js";
 
-export const moduleContent = { 1: module1Content, 2: module2Content, 3: module3Content, 4: module4Content, 5: module5Content, 6: module6Content, 7: module7Content };
+export const moduleContent = { 1: module1Content, 2: module2Content, 3: module3Content, 4: module4Content, 5: module5Content, 6: module6Content, 7: module7Content, 8: module8Content };
 
 /* ------------------------------ DOM helpers ------------------------------ */
 
@@ -473,7 +474,7 @@ function renderPreview(mod, stepId) {
   root.append(card);
   const note = el("div", "locked-note mt-2");
   note.append(
-    document.createTextNode("This round is part of the full eight-module program. Rounds 1 (Morning Report), 2 (The Handoff), 3 (Repeat Customers), and 5 (The Rapid Response) are fully playable now. ")
+    document.createTextNode("All eight rounds of the program are fully playable. ")
   );
   const a = el("a", null, "Start with Round 1 →");
   a.href = "#/module/1";
