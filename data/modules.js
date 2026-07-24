@@ -148,7 +148,7 @@ export const modules = [
   },
   {
     id: 6,
-    status: "preview",
+    status: "ready",
     title: "The Allocation Meeting",
     tagline: "Fairness, Ethics, and the Ultimatum at the Bedside",
     unit: "Ethics committee and critical care, Meridian Health",
