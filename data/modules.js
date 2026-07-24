@@ -70,7 +70,7 @@ export const modules = [
   },
   {
     id: 3,
-    status: "preview",
+    status: "ready",
     title: "Repeat Customers",
     tagline: "Reputation, Trust, and the Shadow of the Future",
     unit: "Nursing–physician relations, Meridian Community Hospital",

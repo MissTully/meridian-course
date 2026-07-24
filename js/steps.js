@@ -5,12 +5,13 @@
 import { personas } from "../data/personas.js";
 import { module1Content } from "../data/module1.js";
 import { module2Content } from "../data/module2.js";
+import { module3Content } from "../data/module3.js";
 import { module5Content } from "../data/module5.js";
 import { STEP_DEFS } from "../data/modules.js";
 import { store } from "./store.js";
 import { emblemSVG, horizonBand, artwork, applyArt } from "./art.js";
 
-export const moduleContent = { 1: module1Content, 2: module2Content, 5: module5Content };
+export const moduleContent = { 1: module1Content, 2: module2Content, 3: module3Content, 5: module5Content };
 
 /* ------------------------------ DOM helpers ------------------------------ */
 
@@ -469,7 +470,7 @@ function renderPreview(mod, stepId) {
   root.append(card);
   const note = el("div", "locked-note mt-2");
   note.append(
-    document.createTextNode("This round is part of the full eight-module program. Rounds 1 (Morning Report), 2 (The Handoff), and 5 (The Rapid Response) are fully playable now. ")
+    document.createTextNode("This round is part of the full eight-module program. Rounds 1 (Morning Report), 2 (The Handoff), 3 (Repeat Customers), and 5 (The Rapid Response) are fully playable now. ")
   );
   const a = el("a", null, "Start with Round 1 →");
   a.href = "#/module/1";

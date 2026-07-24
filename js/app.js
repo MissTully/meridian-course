@@ -76,7 +76,7 @@ function renderDashboard() {
   const bwrap = el("div", "wrap");
   const head = el("div", "board-head");
   head.append(el("h3", null, "The Rounds Board"));
-  head.append(el("div", "board-note", "Rounds 1, 2, and 5 are fully playable. Your progress stays on this device."));
+  head.append(el("div", "board-note", "Rounds 1, 2, 3, and 5 are fully playable. Your progress stays on this device."));
   bwrap.append(head);
 
   const grid = el("div", "module-grid");
