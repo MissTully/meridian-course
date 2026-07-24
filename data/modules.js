@@ -96,7 +96,7 @@ export const modules = [
   },
   {
     id: 4,
-    status: "preview",
+    status: "ready",
     title: "The Contract Table",
     tagline: "Negotiation and Bargaining",
     unit: "Payer relations and supply chain, Meridian Health system office",
