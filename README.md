@@ -26,7 +26,7 @@ All eight modules are fully authored: vignette, Socratic coach flow, branching M
 
 Every authored module follows the six-step rhythm:
 
-| Step | Component | v1 implementation |
+| Step | Component | Implementation |
 |---|---|---|
 | 1 | Topic Video | Narrative vignette + concept teaching (video placeholder) |
 | 2 | AI Concept Coach | Scripted Socratic coaching flow with misconception probes |
