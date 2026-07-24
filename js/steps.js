@@ -8,7 +8,7 @@ import { module2Content } from "../data/module2.js";
 import { module5Content } from "../data/module5.js";
 import { STEP_DEFS } from "../data/modules.js";
 import { store } from "./store.js";
-import { emblemSVG, horizonBand } from "./art.js";
+import { emblemSVG, horizonBand, artwork, applyArt } from "./art.js";
 
 export const moduleContent = { 1: module1Content, 2: module2Content, 5: module5Content };
 
@@ -97,6 +97,7 @@ function renderVideo(mod, content) {
   const card = el("div", "panel-card");
 
   const vp = el("div", "video-placeholder");
+  applyArt(vp, artwork.modules[mod.id], { from: 0.82, mid: 0.72, to: 0.62 });
   const vpEmblem = el("div", "vp-emblem");
   vpEmblem.append(emblemSVG(mod.id, 52));
   vp.append(vpEmblem);

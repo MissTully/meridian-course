@@ -164,6 +164,50 @@ export function emblemSVG(moduleId, size = 44) {
   return svg;
 }
 
+/* ------------------------------ Course photography ------------------------------
+   Uploaded course art (art/source), served from optimized derivatives in
+   art/web. Each image is chosen as the photographic echo of its round's
+   emblem metaphor, and always sits beneath a deep-navy scrim so the
+   "Nautical Calm" palette—and the text—stay in charge. */
+
+export const artwork = {
+  modules: {
+    1: { src: "art/web/m1-dawn.jpg", pos: "center 40%", alt: "A solo sailor stands at the bow at dawn" },
+    2: { src: "art/web/m2-wake.jpg", pos: "center", alt: "Aerial view of a sailboat cutting a clean wake" },
+    3: { src: "art/web/m3-after-storm.jpg", pos: "center 35%", alt: "A sailboat emerges from a storm into light" },
+    4: { src: "art/web/m4-two-boats.jpg", pos: "center 55%", alt: "Two sailboats race neck and neck at sunset" },
+    5: { src: "art/web/m5-squall.jpg", pos: "center 22%", alt: "A captain calls orders through a squall" },
+    6: { src: "art/web/m6-rogue-wave.jpg", pos: "center 45%", alt: "A bow crashes through a massive wave" },
+    7: { src: "art/web/m7-fleet.jpg", pos: "center 60%", alt: "A fleet of many-colored spinnakers rounds a mark" },
+    8: { src: "art/web/m8-helm-hands.jpg", pos: "center", alt: "Weathered hands grip a wet ship's wheel" },
+  },
+  pages: {
+    home: { src: "art/web/home-helm.jpg", pos: "center 35%", alt: "A lone captain at the helm of a heeling sailboat" },
+    cast: { src: "art/web/cast-crew.jpg", pos: "center 30%", alt: "A crew works together to reef the mainsail" },
+    program: { src: "art/web/program-light.jpg", pos: "center 45%", alt: "A sailboat sails out of a storm beneath breaking light" },
+  },
+};
+
+/** Layered navy scrim + photo, as a CSS background value. Direction of the
+    gradient keeps the text zone (left) deep navy while the art breathes on
+    the right. `strength` raises the wash for busier images. */
+export function scrimBackground(art, { from = 0.97, mid = 0.87, to = 0.52 } = {}) {
+  return (
+    `linear-gradient(100deg, rgba(12,27,42,${from}) 0%, rgba(12,27,42,${mid}) 46%, rgba(12,27,42,${to}) 100%),` +
+    ` url("${art.src}")`
+  );
+}
+
+/** Apply a photo background with scrim to an element. */
+export function applyArt(node, art, opts) {
+  if (!art) return;
+  node.style.backgroundImage = scrimBackground(art, opts);
+  node.style.backgroundSize = "cover, cover";
+  node.style.backgroundPosition = `center, ${art.pos || "center"}`;
+  node.setAttribute("role", "img");
+  node.setAttribute("aria-label", art.alt);
+}
+
 /** A wide horizon-and-contours band used as quiet section art. */
 export function horizonBand(width = 320, height = 56) {
   const svg = document.createElementNS(NS, "svg");

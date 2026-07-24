@@ -6,7 +6,7 @@ import { modules, getModule, STEP_DEFS, CORE_STEPS } from "../data/modules.js";
 import { personaList } from "../data/personas.js";
 import { store } from "./store.js";
 import { renderStep, el, roseSVG } from "./steps.js";
-import { emblemSVG } from "./art.js";
+import { emblemSVG, artwork, applyArt } from "./art.js";
 
 const app = document.getElementById("app");
 
@@ -54,6 +54,7 @@ function renderDashboard() {
   const frag = document.createDocumentFragment();
 
   const hero = el("section", "hero");
+  applyArt(hero, artwork.pages.home);
   hero.append(el("div", "contours"));
   const wrap = el("div", "wrap");
   wrap.append(el("div", "kicker", "Eight rounds · One health system · Every game you're already playing"));
@@ -121,6 +122,7 @@ function renderModulePage(mod, stepId) {
   const validStep = STEP_DEFS.some((s) => s.id === stepId) ? stepId : firstOpenStep(mod);
 
   const hero = el("section", "module-hero");
+  applyArt(hero, artwork.modules[mod.id]);
   const hwrap = el("div", "wrap");
   hwrap.append(el("div", "round-no", `Round ${mod.id} of 8`));
   hwrap.append(el("h2", null, `${mod.title} — ${mod.tagline}`));
@@ -200,6 +202,9 @@ function shorten(text) {
 function renderPersonas() {
   const frag = document.createDocumentFragment();
   const wrap = el("div", "wrap");
+  const banner = el("div", "page-banner");
+  applyArt(banner, artwork.pages.cast, { from: 0.55, mid: 0.35, to: 0.55 });
+  wrap.append(banner);
   const head = el("div", "page-head");
   head.append(el("h2", null, "The Cast of Meridian Health"));
   head.append(
@@ -249,6 +254,9 @@ function renderAbout() {
   const frag = document.createDocumentFragment();
   const wrap = el("div", "wrap");
 
+  const banner = el("div", "page-banner");
+  applyArt(banner, artwork.pages.program, { from: 0.5, mid: 0.3, to: 0.5 });
+  wrap.append(banner);
   const head = el("div", "page-head");
   head.append(el("h2", null, "The Program"));
   head.append(

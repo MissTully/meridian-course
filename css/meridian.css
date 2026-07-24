@@ -625,6 +625,34 @@ textarea.reflection:focus { outline: 2px solid var(--brass); outline-offset: 1px
 .locked-emblem { color: var(--brass); opacity: 0.85; margin-bottom: 0.5rem; }
 .horizon-band { display: block; margin: 1.4rem auto 0; color: var(--brass); opacity: 0.5; max-width: 100%; }
 
+/* ======================== Course photography ======================== */
+
+/* Photo heroes: the scrim gradient is applied inline; these keep the
+   composition calm and the text zone authoritative. */
+.hero, .module-hero, .video-placeholder { background-size: cover; background-position: center; }
+.hero h2, .module-hero h2 { text-shadow: 0 1px 12px rgba(12, 27, 42, 0.45); }
+
+/* Page banners (The Cast, The Program): a widescreen glimpse, horizon-ruled. */
+.page-banner {
+  height: 216px;
+  border-radius: var(--radius);
+  background-size: cover;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+  margin-top: 2.4rem;
+}
+.page-banner::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brass-bright), transparent);
+  opacity: 0.9;
+}
+.page-banner + .page-head { padding-top: 1.6rem; }
+@media (max-width: 640px) { .page-banner { height: 150px; } }
+
 /* ======================== Utility ======================== */
 
 .locked-note {
