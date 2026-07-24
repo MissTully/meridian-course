@@ -44,7 +44,7 @@ export const modules = [
   },
   {
     id: 2,
-    status: "preview",
+    status: "ready",
     title: "The Handoff",
     tagline: "Information Asymmetry and Signaling",
     unit: "Emergency department → inpatient medicine, Meridian Academic Medical Center",

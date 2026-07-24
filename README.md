@@ -18,9 +18,9 @@ Or open `index.html` directly in a browser (a local server is recommended so ES 
 
 Learner progress, simulation scores, and commitments-to-practice persist in `localStorage`.
 
-## What's implemented (v1 — the pilot slice)
+## What's implemented
 
-Per the design doc's "start narrow" recommendation, v1 fully authors **Module 1** (conceptual foundation, establishes the Meridian setting) and **Module 5** (most protocolized, most measurable), with the remaining six modules present as navigable overviews.
+Per the design doc's "start narrow" recommendation, the pilot slice authored **Module 1** (conceptual foundation, establishes the Meridian setting) and **Module 5** (most protocolized, most measurable). **Module 2** (The Handoff — information asymmetry and signaling) is now authored as well. The remaining five modules are present as navigable overviews.
 
 Every authored module follows the six-step rhythm:
 
@@ -37,6 +37,7 @@ Every authored module follows the six-step rhythm:
 Behavioral scoring anchors implemented in v1:
 
 - **Module 1:** acknowledgment-before-advocacy moves; surfacing system dynamics without individual blame.
+- **Module 2:** screen design and costly signaling; check-backs that convert disclosures into plans; pressure without hostility.
 - **Module 5:** closed-loop communication completion rate; graded assertiveness (concern → CUS → two-challenge rule).
 
 ## Repository layout
@@ -50,6 +51,7 @@ js/store.js           Progress + scores persistence (localStorage)
 data/modules.js       All 8 modules — metadata, concepts, anchors, step content
 data/personas.js      The persistent Meridian persona roster
 data/module1.js       Module 1 authored content (coach, MCQs, simulations)
+data/module2.js       Module 2 authored content (coach, MCQs, simulations)
 data/module5.js       Module 5 authored content (coach, MCQs, simulations)
 docs/course-design.md The full program design document
 ```
@@ -60,7 +62,7 @@ Deep navy and crisp white with soft brass accents; serif display (Playfair Displ
 
 ## Roadmap
 
-- Author Modules 2–4 and 6–8 (coach flows, MCQ cases, simulations)
+- Author Modules 3–4 and 6–8 (coach flows, MCQ cases, simulations)
 - Live AI personas: swap the scripted dialogue provider for a Claude-backed provider (the dialogue engine is provider-agnostic by design)
 - Batch rubric scoring + mastery dashboard over the competency map (concept × TeamSTEPPS tool × ethical framework)
 - Spaced retrieval: resurface missed MCQ concepts as "curbside consult" questions in later modules
