@@ -6,6 +6,7 @@ import { modules, getModule, STEP_DEFS, CORE_STEPS } from "../data/modules.js";
 import { personaList } from "../data/personas.js";
 import { store } from "./store.js";
 import { renderStep, el, roseSVG } from "./steps.js";
+import { emblemSVG } from "./art.js";
 
 const app = document.getElementById("app");
 
@@ -65,6 +66,9 @@ function renderDashboard() {
     )
   );
   hero.append(wrap);
+  const heroRose = el("div", "hero-rose");
+  heroRose.append(roseSVG(230));
+  hero.append(heroRose);
   frag.append(hero);
 
   const board = el("section", "rounds-board");
@@ -79,6 +83,9 @@ function renderDashboard() {
     const done = store.moduleProgress(m.id, CORE_STEPS);
     const card = el("a", "module-card");
     card.href = `#/module/${m.id}`;
+    const cardEmblem = el("div", "card-emblem");
+    cardEmblem.append(emblemSVG(m.id, 40));
+    card.append(cardEmblem);
     card.append(el("div", "round-no", `Round ${m.id}`));
     card.append(el("h4", null, `${m.title} — ${m.tagline}`));
     card.append(el("div", "unit", m.unit));
@@ -124,6 +131,9 @@ function renderModulePage(mod, stepId) {
   threads.append(el("span", "thread-chip", `Ethics & empathy: ${shorten(mod.ethics)}`));
   hwrap.append(threads);
   hero.append(hwrap);
+  const watermark = el("div", "hero-emblem");
+  watermark.append(emblemSVG(mod.id, 190));
+  hero.append(watermark);
   frag.append(hero);
 
   const bodyWrap = el("div", "wrap");

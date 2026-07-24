@@ -8,6 +8,7 @@ import { module2Content } from "../data/module2.js";
 import { module5Content } from "../data/module5.js";
 import { STEP_DEFS } from "../data/modules.js";
 import { store } from "./store.js";
+import { emblemSVG, horizonBand } from "./art.js";
 
 export const moduleContent = { 1: module1Content, 2: module2Content, 5: module5Content };
 
@@ -96,6 +97,9 @@ function renderVideo(mod, content) {
   const card = el("div", "panel-card");
 
   const vp = el("div", "video-placeholder");
+  const vpEmblem = el("div", "vp-emblem");
+  vpEmblem.append(emblemSVG(mod.id, 52));
+  vp.append(vpEmblem);
   vp.append(el("div", "vp-label", "Topic video · production placeholder"));
   vp.append(el("div", "vp-title", content.video.vpTitle));
   card.append(vp);
@@ -410,6 +414,9 @@ function renderDebrief(mod, content) {
     intro.append(el("p", "eyebrow mt-2", "Your performance this round"));
     intro.append(grid);
   }
+  const band = horizonBand(340, 56);
+  band.classList.add("horizon-band");
+  intro.append(band);
   root.append(intro);
 
   const refl = el("div", "panel-card");
@@ -449,6 +456,9 @@ function renderPreview(mod, stepId) {
   const card = el("div", "panel-card");
   const summaryKey = stepId === "switch" ? "oneOnOne" : stepId;
   const summary = mod.stepSummaries[summaryKey];
+  const lockedEmblem = el("div", "locked-emblem");
+  lockedEmblem.append(emblemSVG(mod.id, 44));
+  card.append(lockedEmblem);
   card.append(el("h4", null, "Designed — not yet authored"));
   if (stepId === "switch") {
     card.append(el("p", null, "After the one-on-one meeting, you'll replay it from your counterpart's chair — the AI takes your former role. Perspective-taking is rehearsed in every round of this program, not taught once."));
