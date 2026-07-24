@@ -2,6 +2,8 @@
 
 **Navigating Healthcare's Toughest Challenges** — an 8-module, simulation-based program for healthcare leaders.
 
+**Live site:** https://misstully.github.io/meridian-course/
+
 Learners "round" not on patients but on strategic situations: each module is one round through a different unit of **Meridian Health**, a fictional mid-sized regional health system. Game theory provides the analytical skeleton; empathy, perspective-taking, ethics, and TeamSTEPPS communication tools provide the human musculature.
 
 ## Running the app
