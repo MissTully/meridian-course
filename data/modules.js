@@ -174,7 +174,7 @@ export const modules = [
   },
   {
     id: 7,
-    status: "preview",
+    status: "ready",
     title: "The Coalition",
     tagline: "Politics, Alliances, and Getting Innovation Adopted",
     unit: "Innovation office, Meridian Health",

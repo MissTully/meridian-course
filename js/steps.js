@@ -9,11 +9,12 @@ import { module3Content } from "../data/module3.js";
 import { module4Content } from "../data/module4.js";
 import { module5Content } from "../data/module5.js";
 import { module6Content } from "../data/module6.js";
+import { module7Content } from "../data/module7.js";
 import { STEP_DEFS } from "../data/modules.js";
 import { store } from "./store.js";
 import { emblemSVG, horizonBand, artwork, applyArt } from "./art.js";
 
-export const moduleContent = { 1: module1Content, 2: module2Content, 3: module3Content, 4: module4Content, 5: module5Content, 6: module6Content };
+export const moduleContent = { 1: module1Content, 2: module2Content, 3: module3Content, 4: module4Content, 5: module5Content, 6: module6Content, 7: module7Content };
 
 /* ------------------------------ DOM helpers ------------------------------ */
 
