@@ -67,9 +67,6 @@ function renderDashboard() {
     )
   );
   hero.append(wrap);
-  const heroRose = el("div", "hero-rose");
-  heroRose.append(roseSVG(230));
-  hero.append(heroRose);
   frag.append(hero);
 
   const board = el("section", "rounds-board");

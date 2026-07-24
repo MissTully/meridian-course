@@ -182,7 +182,8 @@ export const artwork = {
     8: { src: "art/web/m8-helm-hands.jpg", pos: "center", alt: "Weathered hands grip a wet ship's wheel" },
   },
   pages: {
-    home: { src: "art/web/home-helm.jpg", pos: "center 35%", alt: "A lone captain at the helm of a heeling sailboat" },
+    home: { src: "art/web/home-truenorth.jpg", pos: "center 30%", alt: "A schooner under full sail beneath a great compass rose — your true north" },
+    helm: { src: "art/web/home-helm.jpg", pos: "center 35%", alt: "A lone captain at the helm of a heeling sailboat" },
     cast: { src: "art/web/cast-crew.jpg", pos: "center 30%", alt: "A crew works together to reef the mainsail" },
     program: { src: "art/web/program-light.jpg", pos: "center 45%", alt: "A sailboat sails out of a storm beneath breaking light" },
   },
