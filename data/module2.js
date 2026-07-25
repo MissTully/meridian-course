@@ -294,9 +294,9 @@ export const module2Content = {
     personas: ["tran"],
     scoring: {
       dims: [
-        { id: "screen", label: "Screen design", max: 4, anchor: "Asked targeted questions that force different realities to sound different" },
-        { id: "loop", label: "Closed loops", max: 3, anchor: "Checked back the transferred picture; converted answers into an explicit plan" },
-        { id: "tone", label: "Pressure without hostility", max: 3, anchor: "Extracted information while leaving the channel better than you found it" },
+        { id: "screen", label: "Screen design", max: 3, anchor: "Asked targeted questions that force different realities to sound different" },
+        { id: "loop", label: "Closed loops", max: 2, anchor: "Checked back the transferred picture; converted answers into an explicit plan" },
+        { id: "tone", label: "Pressure without hostility", max: 2, anchor: "Extracted information while leaving the channel better than you found it" },
       ],
     },
     start: "h1",
@@ -467,7 +467,7 @@ export const module2Content = {
     scoring: {
       dims: [
         { id: "signal", label: "Costly signaling", max: 4, anchor: "Volunteered the expensive, exposing details rather than the smooth headline" },
-        { id: "perspective", label: "Perspective fidelity", max: 3, anchor: "Felt the compression pressure honestly instead of role-playing a saint" },
+        { id: "perspective", label: "Perspective fidelity", max: 2, anchor: "Felt the compression pressure honestly instead of role-playing a saint" },
       ],
     },
     start: "t1",
