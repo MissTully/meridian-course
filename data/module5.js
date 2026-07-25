@@ -295,7 +295,7 @@ export const module5Content = {
       dims: [
         { id: "assertion", label: "Graded assertiveness", max: 4, anchor: "Escalated concern → CUS → two-challenge without skipping or exploding" },
         { id: "data", label: "Data-anchored advocacy", max: 3, anchor: "Led with specific, trended observations rather than unease" },
-        { id: "loop", label: "Closed loops", max: 3, anchor: "Forced explicit acknowledgment; confirmed the plan back" },
+        { id: "loop", label: "Closed loops", max: 2, anchor: "Forced explicit acknowledgment; confirmed the plan back" },
       ],
     },
     start: "k1",
@@ -535,8 +535,8 @@ export const module5Content = {
     },
     scoring: {
       dims: [
-        { id: "receive", label: "Receiving the challenge", max: 4, anchor: "Treated structured pushback as data, not insubordination" },
-        { id: "model", label: "Updating the mental model", max: 3, anchor: "Let new information actually move the diagnosis" },
+        { id: "receive", label: "Receiving the challenge", max: 3, anchor: "Treated structured pushback as data, not insubordination" },
+        { id: "model", label: "Updating the mental model", max: 2, anchor: "Let new information actually move the diagnosis" },
       ],
     },
     start: "c1",

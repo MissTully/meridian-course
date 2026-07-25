@@ -101,6 +101,16 @@ body {
 }
 .masthead nav a:hover, .masthead nav a.active { color: var(--white); border-color: var(--brass); }
 
+@media (max-width: 720px) {
+  .masthead { flex-wrap: wrap; padding: 0.85rem 1.1rem 0.8rem; row-gap: 0.45rem; }
+  .masthead .subtitle { display: none; }
+  .masthead h1 { font-size: 1.15rem; }
+  .masthead nav { margin-left: 0; width: 100%; gap: 1.1rem; }
+  .masthead nav a { font-size: 0.76rem; }
+  .wrap { padding: 0 1.2rem; }
+  .hero, .module-hero { padding-left: 1.2rem; padding-right: 1.2rem; }
+}
+
 main { min-height: calc(100vh - 130px); }
 
 /* Gliding page transitions */

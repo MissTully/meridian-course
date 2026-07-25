@@ -624,7 +624,7 @@ export const module1Content = {
     },
     scoring: {
       dims: [
-        { id: "perspective", label: "Perspective fidelity", max: 4, anchor: "Advocated Raman's legitimate interests rather than role-playing agreeableness" },
+        { id: "perspective", label: "Perspective fidelity", max: 3, anchor: "Advocated Raman's legitimate interests rather than role-playing agreeableness" },
         { id: "candor", label: "Productive candor", max: 3, anchor: "Named the history and the required protections out loud" },
       ],
     },
