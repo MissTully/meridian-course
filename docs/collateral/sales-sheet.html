@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>The Meridian Course — Sales Sheet</title>
+<style>
+  :root {
+    --navy: #0c1b2a; --navy-2: #14293e; --ink: #22384c; --muted: #5b7186;
+    --white: #fdfdfb; --foam: #f4f6f5; --mist: #e6ebec;
+    --brass: #b08d57; --brass-b: #c9a56b; --brass-d: #8f6f3f; --sea: #5d8a7a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #fff; }
+  body { font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--ink); font-size: 9.1pt; line-height: 1.44; }
+  .serif { font-family: "Playfair Display", Georgia, "Times New Roman", serif; }
+  .page { width: 8.5in; height: 11in; position: relative; overflow: hidden; page-break-after: always; background: var(--white); }
+  .page:last-child { page-break-after: avoid; }
+
+  /* ---------- Page 1 ---------- */
+  .hero {
+    position: relative; height: 3.05in; color: var(--white);
+    background: linear-gradient(100deg, rgba(12,27,42,.96) 0%, rgba(12,27,42,.82) 46%, rgba(12,27,42,.45) 100%),
+      url("../../art/web/home-truenorth.jpg") center 30% / cover;
+    padding: 0.55in 0.6in 0;
+  }
+  .hero::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px;
+    background: linear-gradient(90deg, transparent, var(--brass-b), transparent); }
+  .kicker { font-size: 7.5pt; letter-spacing: .24em; text-transform: uppercase; color: var(--brass-b); margin-bottom: 10pt; }
+  .hero h1 { font-family: Georgia, serif; font-weight: 600; font-size: 27pt; line-height: 1.08; max-width: 6.4in; }
+  .hero .sub { font-family: Georgia, serif; font-style: italic; font-size: 12.5pt; color: rgba(253,253,251,.92); margin-top: 8pt; }
+  .hero .lede { margin-top: 9pt; max-width: 5.4in; font-size: 10pt; color: rgba(253,253,251,.85); }
+
+  .body-wrap { padding: 0.26in 0.6in 0; }
+  .cols { display: flex; gap: 0.32in; }
+  .col-main { flex: 1.55; }
+  .col-side { flex: 1; }
+
+  h2.sec { font-family: Georgia, serif; font-size: 13pt; color: var(--navy); margin: 0 0 6pt; }
+  h2.sec::after { content:""; display:block; width: 42pt; height: 1.5px; margin-top: 4pt;
+    background: linear-gradient(90deg, var(--brass), transparent); }
+  p + p { margin-top: 6pt; }
+
+  .pillars { margin-top: 8pt; }
+  .pillar { display: flex; gap: 8pt; margin-bottom: 5.5pt; }
+  .pillar .dot { color: var(--brass); font-size: 8pt; line-height: 1.7; }
+  .pillar b { color: var(--navy); }
+
+  .sidebox { background: var(--foam); border: 1px solid var(--mist); border-radius: 6pt; padding: 9pt 11pt; }
+  .sidebox + .sidebox { margin-top: 7pt; }
+  .sidebox h3 { font-family: Georgia, serif; font-size: 10.5pt; color: var(--navy); margin-bottom: 6pt; }
+  .sidebox ul { list-style: none; }
+  .sidebox li { padding-left: 12pt; position: relative; margin-bottom: 3pt; font-size: 8.3pt; }
+  .sidebox li::before { content:"◆"; position:absolute; left:0; color: var(--brass); font-size: 6.5pt; top: 2.5pt; }
+
+  .stat-row { display: flex; gap: 7pt; margin-top: 8pt; }
+  .stat { flex: 1; border: 1px solid var(--mist); border-radius: 6pt; padding: 6pt 7pt; text-align: center; }
+  .stat .n { font-family: Georgia, serif; font-size: 13.5pt; color: var(--navy); }
+  .stat .l { font-size: 7pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 2pt; }
+
+  .foot { position: absolute; bottom: 0; left: 0; right: 0; background: var(--navy); color: rgba(253,253,251,.85);
+    padding: 10pt 0.6in; font-size: 8.4pt; display: flex; justify-content: space-between; align-items: center; }
+  .foot .url { color: var(--brass-b); font-weight: 600; letter-spacing: .02em; }
+
+  /* ---------- Page 2 ---------- */
+  .p2-head { background: var(--navy); color: var(--white); padding: 0.32in 0.6in; position: relative; }
+  .p2-head::after { content:""; position:absolute; left:0; right:0; bottom:0; height:1.5px;
+    background: linear-gradient(90deg, transparent, var(--brass-b), transparent); }
+  .p2-head h2 { font-family: Georgia, serif; font-size: 16pt; font-weight: 600; }
+  .p2-head .k { font-size: 7pt; letter-spacing: .22em; text-transform: uppercase; color: var(--brass-b); margin-bottom: 4pt; }
+
+  .rounds { padding: 0.22in 0.6in 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8pt 14pt; }
+  .round { border-bottom: 1px solid var(--mist); padding: 6pt 0 7pt; }
+  .round .rn { font-size: 6.8pt; letter-spacing: .18em; text-transform: uppercase; color: var(--brass-d); }
+  .round h4 { font-family: Georgia, serif; font-size: 10.3pt; color: var(--navy); margin: 1pt 0 2pt; }
+  .round p { font-size: 8.2pt; color: var(--ink); line-height: 1.42; }
+  .round .anchor { font-size: 7.6pt; color: var(--muted); margin-top: 2pt; font-style: italic; }
+
+  .rhythm { margin: 0.16in 0.6in 0; background: var(--foam); border: 1px solid var(--mist); border-radius: 6pt; padding: 11pt 13pt; }
+  .rhythm h3 { font-family: Georgia, serif; font-size: 11pt; color: var(--navy); margin-bottom: 5pt; }
+  .rhythm .steps { display: flex; flex-wrap: wrap; gap: 4pt 0; font-size: 8.3pt; }
+  .rhythm .steps span { white-space: nowrap; }
+  .rhythm .steps .arrow { color: var(--brass); padding: 0 5pt; }
+  .rhythm p { font-size: 8.4pt; margin-top: 5pt; color: var(--ink); }
+
+  .evidence { margin: 0.16in 0.6in 0; display: flex; gap: 0.28in; }
+  .evidence .box { flex: 1; }
+  .evidence h3 { font-family: Georgia, serif; font-size: 11pt; color: var(--navy); margin-bottom: 5pt; }
+  .evidence ul { list-style: none; }
+  .evidence li { padding-left: 11pt; position: relative; margin-bottom: 3.5pt; font-size: 8.3pt; }
+  .evidence li::before { content:"◆"; position:absolute; left:0; color: var(--brass); font-size: 6pt; top: 2.5pt; }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page">
+  <div class="hero">
+    <div class="kicker">Eight Rounds · One Health System · Every Game You're Already Playing</div>
+    <h1>The Meridian Course</h1>
+    <div class="sub">Navigating Healthcare's Toughest Challenges</div>
+    <p class="lede">A simulation-based leadership program that takes healthcare leaders on rounds through Meridian Health — a fictional system with real dynamics. Each round pairs one game-theoretic lens with the communication tools that change the game: simulated colleagues, real stakes, calm waters.</p>
+  </div>
+
+  <div class="body-wrap">
+    <div class="cols">
+      <div class="col-main">
+        <h2 class="sec">Why this program exists</h2>
+        <p>Healthcare's hardest problems are rarely knowledge problems. Block-time hoarding, silent safety huddles, failed handoffs, stalled innovations, gamed metrics — each is a <b>predictable equilibrium of a badly designed game</b>, played by rational people responding to the payoffs in front of them. Leaders who can't see the game keep blaming the players. Leaders who can see it change the rules.</p>
+        <p>The Meridian Course teaches that sight — and the conversations that act on it — through deliberate practice, not lecture. Learners negotiate with a burned-out peer who's been exploited before, escalate a safety concern to an anchored senior physician at 3 a.m., tell a family the ICU bed went to someone else, and redesign a perverse incentive in front of the CFO who funded it.</p>
+
+        <div class="pillars">
+          <div class="pillar"><span class="dot">◆</span><div><b>Scored branching simulations.</b> Every conversation is scored against behaviorally anchored rubrics — acknowledgment-before-advocacy, closed-loop completion, costly apology, interest discovery — with outcome paths that reward skill, not effort.</div></div>
+          <div class="pillar"><span class="dot">◆</span><div><b>Switch Chairs, the signature empathy mechanic.</b> After every one-on-one, learners replay the same meeting from the counterpart's chair. Perspective-taking isn't taught once; it's rehearsed eight times.</div></div>
+          <div class="pillar"><span class="dot">◆</span><div><b>A persistent cast in a repeated game.</b> Seventeen recurring personas with stable incentives, hidden information, and memory. The charge nurse you dismiss in Round 3 decides your coalition in Round 7 — because in healthcare, you never play a one-shot game.</div></div>
+          <div class="pillar"><span class="dot">◆</span><div><b>Advocacy-inquiry debriefs with commitments to practice.</b> Every round ends by mapping the concept onto the learner's real organization — and later rounds ask what happened.</div></div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat"><div class="n">8</div><div class="l">Rounds</div></div>
+          <div class="stat"><div class="n">24</div><div class="l">Scored simulations</div></div>
+          <div class="stat"><div class="n">17</div><div class="l">Persistent personas</div></div>
+          <div class="stat"><div class="n">40</div><div class="l">Case decision points</div></div>
+          <div class="stat"><div class="n">2–2.5<span style="font-size:9pt">h</span></div><div class="l">Per round</div></div>
+        </div>
+      </div>
+
+      <div class="col-side">
+        <div class="sidebox">
+          <h3>Who it's for</h3>
+          <ul>
+            <li>Physician, nursing, and pharmacy leaders — new and seasoned</li>
+            <li>Service line directors and department chairs</li>
+            <li>Quality, safety, and operations executives</li>
+            <li>High-potential clinicians entering leadership</li>
+            <li>Teams adopting TeamSTEPPS who want the "why" behind the tools</li>
+          </ul>
+        </div>
+        <div class="sidebox">
+          <h3>What leaders leave with</h3>
+          <ul>
+            <li>A diagnostic reflex: <i>what are the rules paying for?</i> before <i>who failed?</i></li>
+            <li>Practiced fluency in SBAR, CUS, check-backs, and graded assertiveness — as strategy, not ritual</li>
+            <li>A negotiation method built on interests and BATNAs</li>
+            <li>A personal playbook: default tendencies, counter-practices, and three mechanisms they now see differently</li>
+          </ul>
+        </div>
+        <div class="sidebox">
+          <h3>Delivery</h3>
+          <ul>
+            <li>Web-based, self-paced; runs in any modern browser</li>
+            <li>Voice-AI ready: complete agent prompt set for live persona conversations</li>
+            <li>Cohort-friendly: debrief prompts double as facilitation guides</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span><b>The Meridian Course</b> · Simulation-based strategic leadership for healthcare</span>
+    <span class="url">meridian-course.vercel.app</span>
+  </div>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page">
+  <div class="p2-head">
+    <div class="k">The Curriculum</div>
+    <h2>Eight rounds through Meridian Health</h2>
+  </div>
+
+  <div class="rounds">
+    <div class="round"><div class="rn">Round 1 · Executive Suite</div><h4>Morning Report — The Games We Are Already Playing</h4><p>Players, strategies, payoffs, information. The Prisoner's Dilemma in OR block time and float pools — and why changing payoffs beats exhorting cooperation.</p><div class="anchor">Anchors: team structure · psychological safety</div></div>
+    <div class="round"><div class="rn">Round 2 · ED → Inpatient</div><h4>The Handoff — Information Asymmetry &amp; Signaling</h4><p>Cheap talk versus costly signals; screens that force different realities to sound different. SBAR reframed as a signaling protocol.</p><div class="anchor">Anchors: SBAR · check-back · structured handoffs</div></div>
+    <div class="round"><div class="rn">Round 3 · Community Hospital</div><h4>Repeat Customers — Reputation, Trust &amp; Repair</h4><p>Repeated games and the shadow of the future; generous tit-for-tat in noisy environments; the anatomy of a costly apology.</p><div class="anchor">Anchors: mutual support · two-challenge rule · CUS</div></div>
+    <div class="round"><div class="rn">Round 4 · Payer Relations</div><h4>The Contract Table — Negotiation &amp; Bargaining</h4><p>BATNA as the true source of power; interests beneath positions; anchor defense; creating value before claiming it — then claiming it.</p><div class="anchor">Anchors: principled negotiation · active listening</div></div>
+    <div class="round"><div class="rn">Round 5 · Rapid Response</div><h4>The Rapid Response — Coordination Under Pressure</h4><p>Coordination failures versus cooperation failures; focal points and common knowledge; leading a resuscitation with named assignments and closed loops.</p><div class="anchor">Anchors: briefs · call-out/check-back · graded assertiveness</div></div>
+    <div class="round"><div class="rn">Round 6 · Ethics Committee</div><h4>The Allocation Meeting — Fairness &amp; the Ultimatum</h4><p>Fairness perceptions are payoffs; procedural versus distributive justice; delivering decisions people will hate — honestly, without armor.</p><div class="anchor">Anchors: transparency of process · legitimizing emotion</div></div>
+    <div class="round"><div class="rn">Round 7 · Innovation Office</div><h4>The Coalition — Politics, Alliances &amp; Adoption</h4><p>Pivotal players and the Shapley intuition; recruitment sequencing; tailoring without forking — and giving skeptics real instruments.</p><div class="anchor">Anchors: influence without authority · the exposure test</div></div>
+    <div class="round"><div class="rn">Round 8 · Strategy Retreat</div><h4>The System Redesign — Mechanism Design (Capstone)</h4><p>Reverse game theory: redesign the rules so ordinary self-interest produces the outcomes you want. Goodhart's law, pre-mortems, and the autopsy standard.</p><div class="anchor">Anchors: change communication · synthesis of all rounds</div></div>
+  </div>
+
+  <div class="rhythm">
+    <h3>Every round, the same six-step rhythm</h3>
+    <div class="steps">
+      <span><b>1</b> Topic Vignette</span><span class="arrow">→</span>
+      <span><b>2</b> AI Concept Coach</span><span class="arrow">→</span>
+      <span><b>3</b> Branching Case (MCQ)</span><span class="arrow">→</span>
+      <span><b>4</b> One-on-One Simulation</span><span class="arrow">→</span>
+      <span><b>4b</b> Switch Chairs</span><span class="arrow">→</span>
+      <span><b>5</b> Multidisciplinary Meeting</span><span class="arrow">→</span>
+      <span><b>6</b> Reflective Debrief</span>
+    </div>
+    <p>Consistency is pedagogical: learners spend cognitive effort on the content, not on decoding a new format. Assessment runs on three layers — knowledge (tagged MCQs), performance (behaviorally anchored simulation rubrics), and transfer (written commitments revisited in later rounds).</p>
+  </div>
+
+  <div class="evidence">
+    <div class="box">
+      <h3>Built on evidence</h3>
+      <ul>
+        <li>AHRQ TeamSTEPPS 3.0 — team structure, communication tools, observation instruments</li>
+        <li>Debriefing with Good Judgment (Rudolph et al.) — advocacy-inquiry debriefing</li>
+        <li>Axelrod, <i>The Evolution of Cooperation</i>; Schelling, <i>The Strategy of Conflict</i></li>
+        <li>Fisher &amp; Ury, <i>Getting to Yes</i>; Roth, <i>Who Gets What — and Why</i></li>
+        <li>Emanuel et al., fair allocation of scarce medical resources (NEJM)</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Designed for calm</h3>
+      <ul>
+        <li>"Nautical Calm" visual system: deep navy, crisp white, soft brass — high-stakes practice in a visually calm harbor</li>
+        <li>Original commissioned artwork; one symbolic emblem per round</li>
+        <li>All personas, patients, and events are fictional and simulated for educational practice</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span><b>The Meridian Course</b> · All eight rounds available now</span>
+    <span class="url">meridian-course.vercel.app</span>
+  </div>
+</div>
+
+</body>
+</html>

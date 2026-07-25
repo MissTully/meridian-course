@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>The Meridian Course — Instructor's Learning Summary</title>
+<style>
+  :root {
+    --navy: #0c1b2a; --navy-2: #14293e; --ink: #22384c; --muted: #5b7186;
+    --white: #fdfdfb; --foam: #f4f6f5; --mist: #e6ebec;
+    --brass: #b08d57; --brass-b: #c9a56b; --brass-d: #8f6f3f; --sea: #5d8a7a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--ink); font-size: 9.3pt; line-height: 1.5; }
+  .page { width: 8.5in; min-height: 11in; position: relative; padding: 0.55in 0.65in 0.75in; page-break-after: always; background: var(--white); }
+  .page:last-child { page-break-after: avoid; }
+
+  .cover { background: linear-gradient(115deg, rgba(12,27,42,.97) 0%, rgba(12,27,42,.88) 55%, rgba(12,27,42,.62) 100%),
+      url("../../art/web/home-truenorth.jpg") center 35% / cover; color: var(--white); display: flex; flex-direction: column; }
+  .cover .kicker { font-size: 8pt; letter-spacing: .26em; text-transform: uppercase; color: var(--brass-b); }
+  .cover h1 { font-family: Georgia, serif; font-size: 30pt; font-weight: 600; margin-top: 12pt; line-height: 1.1; }
+  .cover .doc-title { font-family: Georgia, serif; font-style: italic; font-size: 15pt; color: var(--brass-b); margin-top: 8pt; }
+  .cover .rule { width: 60pt; height: 1.5px; background: linear-gradient(90deg, var(--brass-b), transparent); margin: 20pt 0; }
+  .cover .abstract { max-width: 5.6in; font-size: 10pt; color: rgba(253,253,251,.88); }
+  .cover .meta { margin-top: auto; padding-top: 24pt; font-size: 8.3pt; color: rgba(253,253,251,.7); }
+  .cover .meta b { color: var(--brass-b); }
+
+  h2 { font-family: Georgia, serif; font-size: 15pt; color: var(--navy); margin-bottom: 6pt; }
+  h2::after { content:""; display:block; width: 48pt; height: 1.5px; margin-top: 4pt; background: linear-gradient(90deg, var(--brass), transparent); }
+  h3 { font-family: Georgia, serif; font-size: 11pt; color: var(--navy); margin: 12pt 0 4pt; }
+  p + p { margin-top: 5pt; }
+  .running { position: absolute; top: 0.28in; right: 0.65in; font-size: 7pt; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  .pageno { position: absolute; bottom: 0.32in; right: 0.65in; font-size: 7.5pt; color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 7pt; }
+  th { font-size: 7.4pt; letter-spacing: .1em; text-transform: uppercase; color: var(--brass-d); text-align: left;
+       border-bottom: 1.2px solid var(--brass); padding: 3pt 6pt 4pt 0; }
+  td { font-size: 8.5pt; padding: 4.5pt 6pt 4.5pt 0; border-bottom: 0.6px solid var(--mist); vertical-align: top; }
+  td.c { font-weight: 600; color: var(--navy); white-space: nowrap; }
+
+  ul.lo { list-style: none; margin-top: 4pt; }
+  ul.lo li { padding-left: 13pt; position: relative; margin-bottom: 3.5pt; }
+  ul.lo li::before { content:"◆"; position: absolute; left: 0; top: 2.5pt; color: var(--brass); font-size: 6.5pt; }
+
+  .mod { border: 1px solid var(--mist); border-radius: 6pt; padding: 12pt 14pt 10pt; margin-top: 10pt; }
+  .mod .head { display: flex; justify-content: space-between; align-items: baseline; }
+  .mod .rn { font-size: 7pt; letter-spacing: .18em; text-transform: uppercase; color: var(--brass-d); }
+  .mod h3 { margin: 2pt 0 1pt; font-size: 12pt; }
+  .mod .unit { font-size: 8pt; color: var(--muted); font-style: italic; }
+  .mod .grid { display: flex; gap: 14pt; margin-top: 7pt; }
+  .mod .grid > div { flex: 1; }
+  .mod .lab { font-size: 7pt; letter-spacing: .12em; text-transform: uppercase; color: var(--brass-d); margin-bottom: 2pt; }
+  .mod .small { font-size: 8.2pt; }
+  .mod .comp-tags { margin-top: 6pt; font-size: 7.6pt; color: var(--muted); }
+  .mod .comp-tags b { color: var(--brass-d); font-weight: 600; }
+  .anchors { background: var(--foam); border-radius: 4pt; padding: 6pt 9pt; margin-top: 7pt; font-size: 8.2pt; }
+  .anchors b { color: var(--navy); }
+
+  .callout { background: var(--foam); border: 1px solid var(--mist); border-left: 2.5px solid var(--brass); border-radius: 4pt; padding: 9pt 12pt; margin-top: 9pt; font-size: 8.7pt; }
+  .refs { font-size: 8.2pt; }
+  .refs li { margin-bottom: 3.5pt; margin-left: 14pt; }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="page cover">
+  <div class="kicker">Eight Rounds · One Health System · Every Game You're Already Playing</div>
+  <h1>The Meridian Course</h1>
+  <div class="doc-title">Instructor's Learning Summary — Competencies &amp; Learning Objectives</div>
+  <div class="rule"></div>
+  <p class="abstract">This document gives instructors, program directors, and CME/CE reviewers a complete map of the program's educational design: the competency framework, module-level learning objectives, behavioral assessment anchors, the pedagogy behind the six-step rhythm, and facilitation guidance for cohort use. The Meridian Course is a simulation-based program in which healthcare leaders "round" on strategic situations across a persistent fictional health system, pairing one game-theoretic lens per module with the TeamSTEPPS and communication tools that act on it.</p>
+  <div class="meta">
+    <b>Format:</b> 8 modules · ~2–2.5 hours each · web-based, self-paced or cohort &nbsp;&nbsp;|&nbsp;&nbsp;
+    <b>Audience:</b> clinical and operational healthcare leaders &nbsp;&nbsp;|&nbsp;&nbsp;
+    <b>Version:</b> 1.0
+  </div>
+</div>
+
+<!-- ============ PAGE: PEDAGOGY ============ -->
+<div class="page">
+  <div class="running">The Meridian Course · Instructor's Learning Summary</div>
+  <h2>Pedagogical design</h2>
+  <p>The program is built on four evidence-based commitments:</p>
+  <h3>1 · Deliberate practice over exposition</h3>
+  <p>Each module's concepts are taught briefly (vignette + Socratic coaching), then immediately exercised in scored, branching simulations where AI counterparts hold their own incentives, histories, and hidden information. Counterparts resist weak moves and reward skilled ones; success requires performing the target behaviors, not describing them.</p>
+  <h3>2 · Perspective-taking as a repeated mechanic</h3>
+  <p>After every one-on-one simulation, the <b>Switch Chairs</b> activity replays the identical scenario with roles inverted: the learner plays their former counterpart. Empathy is not a module in this program; it is rehearsed eight times, each time revealing the counterpart's constraints, fears, and rational logic from the inside.</p>
+  <h3>3 · Advocacy-inquiry debriefing (Debriefing with Good Judgment)</h3>
+  <p>Every module closes with a structured debrief in the Rudolph et al. tradition: the debriefer pairs an observation and honest interpretation with a genuine question ("I noticed X; it made me think Y; what was going on for you?"). Debriefs always end in a written, time-bound <b>commitment to practice</b> applied to the learner's real organization — and Modules 4, 7, and 8 explicitly revisit earlier commitments, creating longitudinal evidence of transfer.</p>
+  <h3>4 · A persistent world that makes the repeated game felt</h3>
+  <p>Seventeen recurring personas carry stable incentives, communication styles, and memory across modules. Relational choices compound: trust built (or spent) with the charge nurse in Module 3 changes what is possible in Module 7's coalition. This architecture teaches the program's central lesson structurally — in healthcare, you never play a one-shot game.</p>
+
+  <h2 style="margin-top:16pt">Assessment architecture</h2>
+  <table>
+    <tr><th style="width:1.15in">Layer</th><th style="width:2.1in">Instrument</th><th>Notes for instructors</th></tr>
+    <tr><td class="c">Knowledge</td><td>5 branching-case MCQs per module (40 total), distractors built from documented misconceptions</td><td>Every option carries teaching feedback; items are tagged to a competency map (game concept × communication tool × ethical frame) for mastery tracking.</td></tr>
+    <tr><td class="c">Performance</td><td>Behaviorally anchored rubrics scoring all 24 simulations (66 dimensions)</td><td>Anchors are observable behaviors (e.g., closed-loop completion, acknowledgment-before-advocacy). Meters are calibrated so perfect play fills them; branch outcomes (strong / provisional / mixed) narrate consequences.</td></tr>
+    <tr><td class="c">Transfer</td><td>Written commitments to practice, revisited in later modules; Module 8's summative "personal playbook"</td><td>The playbook (default tendency + counter-practice + one influenceable mechanism + one standing ritual) is the program's terminal artifact — suitable for portfolio review or coaching follow-up.</td></tr>
+  </table>
+
+  <div class="callout"><b>Facilitation note.</b> In cohort settings, the debrief prompts double as small-group discussion guides, and the simulation outcome bands make excellent case-comparison material ("who reached the strong branch, and what did you do differently?"). The Switch Chairs transfer questions are the highest-yield discussion starters in the program.</div>
+  <div class="pageno">2</div>
+</div>
+
+<!-- ============ PAGE: COMPETENCIES ============ -->
+<div class="page">
+  <div class="running">The Meridian Course · Instructor's Learning Summary</div>
+  <h2>Competency framework</h2>
+  <p>Six competencies organize the program. Each module develops several; the capstone requires all six at once. (Mapping: ● = primary development site, ○ = reinforced.)</p>
+  <table>
+    <tr><th style="width:0.35in"></th><th style="width:2.35in">Competency</th><th>Definition</th></tr>
+    <tr><td class="c">C1</td><td class="c">Strategic Diagnosis</td><td>Read situations as games — identify players, strategies, payoffs, and information; distinguish cooperation, coordination, information, and mechanism failures, because their fixes differ completely.</td></tr>
+    <tr><td class="c">C2</td><td class="c">Structured Team Communication</td><td>Deploy TeamSTEPPS tools (SBAR, check-back, CUS, two-challenge rule, briefs/huddles/debriefs) as strategic instruments that create common knowledge and psychological safety — not as ritual.</td></tr>
+    <tr><td class="c">C3</td><td class="c">Negotiation &amp; Influence</td><td>Excavate interests beneath positions, compute and improve BATNAs, defend against anchors, create value before claiming it, and build coalitions through pivotal-player analysis and honest tailoring.</td></tr>
+    <tr><td class="c">C4</td><td class="c">Relational Capital &amp; Repair</td><td>Play repeated games well: choose strategies that sustain cooperation, forgive noise without licensing patterns, deliver costly apologies, and visibly reward the first mover who speaks up.</td></tr>
+    <tr><td class="c">C5</td><td class="c">Ethical Reasoning &amp; Legitimacy</td><td>Apply utilitarian, deontological, and justice frameworks as complementary error-detectors; design procedurally just processes; deliver decisions people will hate with honesty, empathy, and transparency.</td></tr>
+    <tr><td class="c">C6</td><td class="c">Systems &amp; Mechanism Design</td><td>Redesign rules so ordinary self-interest produces desired outcomes: incentive compatibility, Goodhart's law, pre-mortems, counter-metrics, and humane transition design.</td></tr>
+  </table>
+
+  <h3>Competency × module map</h3>
+  <table>
+    <tr><th>Module</th><th style="text-align:center">C1</th><th style="text-align:center">C2</th><th style="text-align:center">C3</th><th style="text-align:center">C4</th><th style="text-align:center">C5</th><th style="text-align:center">C6</th></tr>
+    <tr><td class="c">1 · Morning Report</td><td align="center">●</td><td align="center">●</td><td align="center">○</td><td align="center">○</td><td align="center">○</td><td align="center">○</td></tr>
+    <tr><td class="c">2 · The Handoff</td><td align="center">●</td><td align="center">●</td><td align="center">○</td><td align="center"></td><td align="center">○</td><td align="center">○</td></tr>
+    <tr><td class="c">3 · Repeat Customers</td><td align="center">○</td><td align="center">●</td><td align="center"></td><td align="center">●</td><td align="center">○</td><td align="center">○</td></tr>
+    <tr><td class="c">4 · The Contract Table</td><td align="center">○</td><td align="center">○</td><td align="center">●</td><td align="center">○</td><td align="center">○</td><td align="center"></td></tr>
+    <tr><td class="c">5 · The Rapid Response</td><td align="center">●</td><td align="center">●</td><td align="center"></td><td align="center">○</td><td align="center">○</td><td align="center">○</td></tr>
+    <tr><td class="c">6 · The Allocation Meeting</td><td align="center">○</td><td align="center">○</td><td align="center"></td><td align="center">○</td><td align="center">●</td><td align="center">●</td></tr>
+    <tr><td class="c">7 · The Coalition</td><td align="center">○</td><td align="center">○</td><td align="center">●</td><td align="center">●</td><td align="center">●</td><td align="center">○</td></tr>
+    <tr><td class="c">8 · The System Redesign</td><td align="center">●</td><td align="center">●</td><td align="center">●</td><td align="center">●</td><td align="center">●</td><td align="center">●</td></tr>
+  </table>
+  <p style="margin-top:6pt"><b>Cross-cutting thread — Perspective-Taking &amp; Empathy:</b> rehearsed in every module through Switch Chairs and scored via empathy markers (naming and legitimizing emotion, honoring the counterpart's rational constraints). Instructors should treat it as a seventh, ambient competency assessed everywhere and lectured nowhere.</p>
+  <div class="pageno">3</div>
+</div>
+
+<!-- ============ PAGES: MODULE LOs ============ -->
+<div class="page">
+  <div class="running">The Meridian Course · Instructor's Learning Summary</div>
+  <h2>Module learning objectives &amp; assessment anchors</h2>
+  <p>Objectives are written to be observable in the module's own simulations; "the learner will be able to…" is implied throughout.</p>
+
+  <div class="mod">
+    <div class="head"><div><div class="rn">Round 1 · Executive suite · C1 C2</div><h3>Morning Report — The Games We Are Already Playing</h3><div class="unit">Prisoner's Dilemma · tragedy of the commons · psychological safety</div></div></div>
+    <div class="grid">
+      <div>
+        <div class="lab">Learning objectives</div>
+        <ul class="lo small">
+          <li>Identify the players, strategies, payoffs, and information structure in a workplace conflict, and name when a Prisoner's Dilemma or commons structure is operating.</li>
+          <li>Predict the equilibrium behavior a given incentive structure will produce, and explain why exhortation fails to change it.</li>
+          <li>Design an intervention that changes payoffs (protection, verification, reversion) rather than appealing to goodwill.</li>
+          <li>Demonstrate acknowledgment-before-advocacy when proposing cooperation to a previously exploited counterpart.</li>
+          <li>Surface a hidden group dynamic in a committee without attributing blame to any individual.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="lab">Simulations &amp; scoring anchors</div>
+        <p class="small"><b>One-on-one:</b> capacity-sharing proposal to a burned peer director — <i>acknowledgment before advocacy; payoff-changing structure; trust trajectory.</i></p>
+        <p class="small"><b>Meeting:</b> capacity committee — <i>system framing; blame avoidance; psychological-safety moves that surface held-back information.</i></p>
+        <p class="small"><b>Debrief focus:</b> where a Prisoner's Dilemma operates in the learner's organization, and one changeable payoff.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mod">
+    <div class="head"><div><div class="rn">Round 2 · ED → inpatient medicine · C1 C2</div><h3>The Handoff — Information Asymmetry and Signaling</h3><div class="unit">Signaling &amp; screening · cheap talk vs. costly signals · SBAR as protocol</div></div></div>
+    <div class="grid">
+      <div>
+        <div class="lab">Learning objectives</div>
+        <ul class="lo small">
+          <li>Distinguish cheap talk from costly signals, and weight messages by what they cost the sender.</li>
+          <li>Design screening questions that force different underlying realities to produce audibly different answers.</li>
+          <li>Conduct a structured information handoff using targeted screens and check-backs that convert disclosures into explicit plans.</li>
+          <li>Apply pressure for information without hostility, preserving the sending relationship for future exchanges.</li>
+          <li>Reframe SBAR and structured handoffs as mechanisms that solve information asymmetry — and redesign a message format so critical content cannot be compressed out.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="lab">Simulations &amp; scoring anchors</div>
+        <p class="small"><b>One-on-one:</b> the 55-second handoff from a rushed ED attending — <i>screen design; closed loops; pressure without hostility.</i></p>
+        <p class="small"><b>Meeting:</b> M&amp;M-style handoff review — <i>system framing over trial; blame defused; a forced-field signaling protocol produced and co-owned.</i></p>
+        <p class="small"><b>Debrief focus:</b> the learner's own asymmetries — including where they are the compressing sender.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mod">
+    <div class="head"><div><div class="rn">Round 3 · Community hospital · C2 C4</div><h3>Repeat Customers — Reputation, Trust, and the Shadow of the Future</h3><div class="unit">Repeated games · Axelrod's tournaments · repair after defection</div></div></div>
+    <div class="grid">
+      <div>
+        <div class="lab">Learning objectives</div>
+        <ul class="lo small">
+          <li>Classify relationships as one-shot or repeated games and select strategies (generous tit-for-tat) accordingly.</li>
+          <li>Apply the noise test — run one clarifying question before retaliating against an apparent defection.</li>
+          <li>Deliver a costly apology: name the specific act and audience, own the harm without an exculpatory clause, and attach a checkable forward commitment.</li>
+          <li>Match public repair to public defection, restoring the price of speaking up for witnesses as well as the injured party.</li>
+          <li>Rebuild a silent team's reporting culture by visibly rewarding the first mover who tests the new price of candor.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="lab">Simulations &amp; scoring anchors</div>
+        <p class="small"><b>One-on-one:</b> repairing the dismissed charge nurse — <i>specific acknowledgment; costly apology; enforceable commitment.</i></p>
+        <p class="small"><b>Meeting:</b> the safety huddle that learned silence — <i>making challenge cheap; rewarding the first mover; installing mechanisms that outlive the meeting.</i></p>
+        <p class="small"><b>Debrief focus:</b> a real repair, specified — or a first mover's loop the learner will close visibly.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pageno">4</div>
+</div>
+
+<div class="page">
+  <div class="running">The Meridian Course · Instructor's Learning Summary</div>
+
+  <div class="mod">
+    <div class="head"><div><div class="rn">Round 4 · Payer relations · C3</div><h3>The Contract Table — Negotiation and Bargaining</h3><div class="unit">BATNA · interests vs. positions · anchoring · the negotiator's dilemma</div></div></div>
+    <div class="grid">
+      <div>
+        <div class="lab">Learning objectives</div>
+        <ul class="lo small">
+          <li>Compute and price a BATNA before negotiating, and identify actions that improve it away from the table.</li>
+          <li>Excavate interests beneath stated positions with questions that invite information rather than defense.</li>
+          <li>Neutralize an anchor by re-anchoring on objective criteria, then pivot to integrative ground.</li>
+          <li>Construct value-creating trades across asymmetric interests — then claim a defensible share with a rationale the counterpart can ratify internally.</li>
+          <li>Forge a unified internal mandate: a true reservation point, ordered red lines, bounded authority, and an escalation protocol.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="lab">Simulations &amp; scoring anchors</div>
+        <p class="small"><b>One-on-one:</b> the payer renewal with hidden flexibility — <i>interest discovery; value creation; relationship preservation.</i></p>
+        <p class="small"><b>Meeting:</b> the pre-negotiation mandate huddle — <i>forging the mandate; surfacing hidden constraints; the negotiator's charter.</i></p>
+        <p class="small"><b>Debrief focus:</b> mapping a real upcoming negotiation — both parties' interests and BATNAs, one integrative option.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mod">
+    <div class="head"><div><div class="rn">Round 5 · Rapid response · C1 C2</div><h3>The Rapid Response — Coordination Games and Communication Under Pressure</h3><div class="unit">Coordination vs. cooperation failures · focal points · common knowledge</div></div></div>
+    <div class="grid">
+      <div>
+        <div class="lab">Learning objectives</div>
+        <ul class="lo small">
+          <li>Differentiate coordination failures from cooperation failures, and select convergence fixes versus payoff fixes accordingly.</li>
+          <li>Explain how protocols and standard concentrations manufacture focal points, and how closed-loop communication creates common knowledge.</li>
+          <li>Escalate a clinical concern through graded assertiveness — concern with data → CUS → two-challenge rule — without skipping rungs or folding.</li>
+          <li>Lead an emergency response with named role assignments, demanded confirmations, and licensed call-outs; close every loop audibly.</li>
+          <li>Conduct a two-minute team debrief that converts one event's coordination into the team's standing practice.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="lab">Simulations &amp; scoring anchors</div>
+        <p class="small"><b>One-on-one:</b> 03:10 graded assertiveness with an anchored senior physician — <i>assertion ladder; data-anchored advocacy; closed loops.</i></p>
+        <p class="small"><b>Meeting:</b> leading the rapid response — <i>closed-loop completion rate; surfacing held information; the team debrief.</i></p>
+        <p class="small"><b>Debrief focus:</b> where the learner's real team runs on assumed rather than common knowledge.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mod">
+    <div class="head"><div><div class="rn">Round 6 · Ethics committee · C5 C6</div><h3>The Allocation Meeting — Fairness, Ethics, and the Ultimatum at the Bedside</h3><div class="unit">Ultimatum game · procedural vs. distributive justice · crisis standards</div></div></div>
+    <div class="grid">
+      <div>
+        <div class="lab">Learning objectives</div>
+        <ul class="lo small">
+          <li>Explain why fairness perceptions function as real payoffs, and predict how excluded stakeholders reject illegitimate processes.</li>
+          <li>Distinguish procedural from distributive justice, and defend pre-committed transparent criteria over ad hoc bedside discretion.</li>
+          <li>Apply utilitarian, deontological, and justice frameworks as complementary error-detectors, articulating what each protects that the others miss.</li>
+          <li>Deliver a devastating decision without armor: the plain answer first, emotion named and legitimized, process transparent, promises scoped to actual authority.</li>
+          <li>Facilitate sincere framework conflict toward a defensible, revisable process — with the missing voice given real authority, not speaking time.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="lab">Simulations &amp; scoring anchors</div>
+        <p class="small"><b>One-on-one:</b> the family room — <i>honesty without armor; empathy markers; process transparency.</i></p>
+        <p class="small"><b>Meeting:</b> the ethics committee protocol review — <i>framework stewardship; voice for the missing; a defensible process produced.</i></p>
+        <p class="small"><b>Debrief focus:</b> the learner's default framework under pressure — and what the others would protect.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pageno">5</div>
+</div>
+
+<div class="page">
+  <div class="running">The Meridian Course · Instructor's Learning Summary</div>
+
+  <div class="mod">
+    <div class="head"><div><div class="rn">Round 7 · Innovation office · C3 C4 C5</div><h3>The Coalition — Politics, Alliances, and Getting Innovation Adopted</h3><div class="unit">Pivotal players · sequencing · the ethics of influence</div></div></div>
+    <div class="grid">
+      <div>
+        <div class="lab">Learning objectives</div>
+        <ul class="lo small">
+          <li>Map stakeholders by pivotality (whose movement changes the outcome) rather than seniority, using the Shapley intuition.</li>
+          <li>Sequence recruitment so pivotal skeptics get design access while the proposal can still move — objections requested before support.</li>
+          <li>Surface operative objections beneath stated ones, and convert them into specifications the skeptic co-authors.</li>
+          <li>Offer skeptics real instruments — kill clauses, overrides, audit triggers — and explain why instrumented opposition protects adoption.</li>
+          <li>Tailor one true proposal to different stakeholders' interest-languages while passing the exposure test: all versions cohere if compared.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="lab">Simulations &amp; scoring anchors</div>
+        <p class="small"><b>One-on-one:</b> recruiting the pivotal skeptical chief — <i>surfacing true interests; design access granted; transparent influence.</i></p>
+        <p class="small"><b>Meeting:</b> the governance vote — <i>tailoring without forking; moving the genuine undecided; converting oppositions into governance roles.</i></p>
+        <p class="small"><b>Debrief focus:</b> a real initiative mapped as a coalition problem; the honest pitch for each party.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mod">
+    <div class="head"><div><div class="rn">Round 8 · Strategy retreat · Capstone · all competencies</div><h3>The System Redesign — Mechanism Design and Leading at Scale</h3><div class="unit">Incentive compatibility · Goodhart's law · the pre-mortem discipline</div></div></div>
+    <div class="grid">
+      <div>
+        <div class="lab">Learning objectives</div>
+        <ul class="lo small">
+          <li>Diagnose organizational dysfunctions as equilibria of badly designed mechanisms — asking what the rules pay for before who failed.</li>
+          <li>Redesign measures and incentives to the standard: gaming the metric and doing the right thing become the same behavior.</li>
+          <li>Run the pre-mortem ("how would I hit this number without doing the work?") and attach counter-metrics to every target.</li>
+          <li>Translate a mechanism redesign into financial language — downside, discovery cost, exit — while defending its load-bearing terms against gutting simplifications.</li>
+          <li>Design humane transitions for those the old rules rewarded, and lead a multi-stakeholder redesign end-to-end using all prior modules' skills.</li>
+          <li>Produce a personal leadership playbook: default tendency, counter-practice, one influenceable mechanism, one standing ritual.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="lab">Simulations &amp; scoring anchors</div>
+        <p class="small"><b>One-on-one:</b> penciling the redesign with the CFO — <i>financial translation; mechanism integrity; owning the history.</i></p>
+        <p class="small"><b>Meeting (capstone):</b> the strategy retreat — <i>mechanism diagnosis without villains; running the room; trade-offs priced; a mechanism shipped with owners, counter-metrics, and a sunset.</i></p>
+        <p class="small"><b>Debrief focus:</b> the summative playbook across all eight rounds.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:14pt">Foundational references</h2>
+  <ul class="refs">
+    <li>Agency for Healthcare Research and Quality. <i>TeamSTEPPS 3.0 Curriculum.</i></li>
+    <li>Rudolph JW, Simon R, Rivard P, Dufresne RL, Raemer DB. Debriefing with good judgment. <i>Anesthesiol Clin.</i> 2007;25(2):361–376.</li>
+    <li>Axelrod R. <i>The Evolution of Cooperation.</i> Basic Books; 1984.</li>
+    <li>Schelling T. <i>The Strategy of Conflict.</i> Harvard University Press; 1960.</li>
+    <li>Fisher R, Ury W, Patton B. <i>Getting to Yes.</i> Penguin; 2011.</li>
+    <li>Dixit A, Nalebuff B. <i>The Art of Strategy.</i> W. W. Norton; 2008.</li>
+    <li>Güth W, Schmittberger R, Schwarze B. An experimental analysis of ultimatum bargaining. <i>J Econ Behav Organ.</i> 1982;3(4):367–388.</li>
+    <li>Emanuel EJ, et al. Fair allocation of scarce medical resources in the time of Covid-19. <i>N Engl J Med.</i> 2020;382:2049–2055.</li>
+    <li>Roth A. <i>Who Gets What — and Why.</i> Houghton Mifflin Harcourt; 2015.</li>
+    <li>Kotter JP. <i>Leading Change.</i> Harvard Business Review Press; 2012.</li>
+  </ul>
+  <div class="pageno">6</div>
+</div>
+
+</body>
+</html>
